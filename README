@@ -1,0 +1,3 @@
+compile HTML using
+
+> jupyter nbconvert --template code_hide_template.tpl --to html introduction.ipynb
