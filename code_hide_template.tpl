@@ -1,11 +1,8 @@
 {% extends 'full.tpl'%}
 {% block any_cell %}
-{% if 'hello-world1' in cell['metadata'].get('tags', []) %}
-    <div class="hello-world1">
-        {{ super() }}
-    </div>
-{% elif 'hello-world2' in cell['metadata'].get('tags', []) %}
-    <div class="hello-world2">
+
+{% if (cell['metadata'].get('tags', [])) | length > 0 %}
+    <div class="{{ cell['metadata'].get('tags',[])[0] }}">
         {{ super() }}
     </div>
 {% else %}
